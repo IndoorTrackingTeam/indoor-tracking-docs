@@ -1,0 +1,8 @@
+{
+  "label": "ESP32",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Documentação para ajudar na configuração e uso do ESP32."
+  }
+}
