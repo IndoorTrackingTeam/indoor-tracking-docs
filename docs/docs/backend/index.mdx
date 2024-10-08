@@ -1,0 +1,19 @@
+---
+title: Backend
+sidebar_position: 0
+slug: /
+---
+
+import DocCardList from '@theme/DocCardList';
+
+O backend do projeto Indoor Tracking foi desenvolvido com foco em escalabilidade, alta disponibilidade e desempenho. 
+
+Toda a infraestrutura foi hospedada na **Google Cloud Platform (GCP)** e utiliza **Python** com o framework **FastAPI** para garantir uma arquitetura moderna e eficiente.
+
+Ele está dividido em duas APIs e uma Function, como descrito abaixo:
+
+- **API Principal**: Responsável pela comunicação entre o frontend e o banco de dados MongoDB, esta API realiza operações de CRUD (Create, Read, Update e Delete) para os equipamentos e usuários. Além disso, ela gerencia a inserção dos dados utilizados para o treinamento do modelo e o histórico dos dados dos roteadores capturados pelo ESP32, possibilitando a localização precisa dos equipamentos em tempo real.
+- **API de Machine Learning**: Encargada de todo o processo de treinamento do modelo, essa API utiliza os dados armazenados no banco para realizar a inferência da localização dos equipamentos. Ela é requisitada periodicamente por uma Cloud Function, que chama seu endpoint em intervalos regulares para atualizar as localizações no sistema.
+- **Function Triggers ML**: Esta Function é responsável por chamar o endpoint da API de Machine Learning e, ao receber a nova localização dos equipamentos, atualiza os dados no banco de dados.
+
+<DocCardList />
