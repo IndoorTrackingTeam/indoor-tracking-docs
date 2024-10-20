@@ -98,16 +98,60 @@ A seguir, estão listados os principais endpoints da API, divididos por suas res
     <span class="highlight-blue">GET</span> `/user/send-email/redefine-password?email={email}`: Envia um email para realizar a redefinição de senha do usuário (esse endpoint é assíncrono). 
 
     <span class="highlight-green">POST</span> `/user/create`: Cria um novo usuário.
+    - Corpo da requisição:
+    ```json
+    {
+        "name": "string",
+        "email": "string",
+        "password": "string"
+    }
+    ```
 
     <span class="highlight-green">POST</span> `/user/login`: Faz a autenticação do login.
+    - Corpo da requisição: 
+    ```json
+    {
+        "email": "string",
+        "password": "string"
+    }
+    ```
 
     <span class="highlight-green">POST</span> `/user/change-user-admin`: Altera o campo de administração do usuário (false/true).
+    - Corpo da requisição: 
+    ```json
+    {
+        "email": "string",
+        "isAdmin": false
+    }
+    ```
 
     <span class="highlight-orange">PUT</span> `/user/update`: Atualiza as informações de um usuário.
+    - Corpo da requisição: 
+    ```json
+    {
+        "name": "string",
+        "email": "string",
+        "password": "string"
+    }
+    ```
 
     <span class="highlight-orange">PUT</span> `/user/update-photo`: Atualiza a foto de um usuário.
+    - Corpo da requisição: 
+    ```json
+    {
+        "_id": "string",
+        "photo": "string"
+    }
+    ```
 
     <span class="highlight-orange">PUT</span> `/user/redefine-password`: Atualiza a senha de um usuário.
+    - Corpo da requisição: 
+    ```json
+    {
+        "email": "string",
+        "password": "string"
+    }
+    ```
 
     <span class="highlight-red">DELETE</span> `/user/delete?user_email={user_email}`: Exclui um usuário.  
 
@@ -126,16 +170,42 @@ A seguir, estão listados os principais endpoints da API, divididos por suas res
     <span class="highlight-blue">GET</span> `/equipment/get-equipments-by-current-room?current_room={current_room}`: Retorna os equipamentos encontrados em uma determinada sala.
 
     <span class="highlight-green">POST</span> `/equipment/create`: Adiciona um novo equipamento ao sistema.
+    - Corpo da requisição: 
+    ```json
+    {
+        "name": "string",
+        "register": "string",
+        "maintenance": false,
+        "c_room": "string",
+        "c_date": "YYYY-MM-DDTHH:MM:SS.SSSZ",
+        "esp_id": "string",
+        "image": "string"
+    }
+    ```
 
     <span class="highlight-green">POST</span> `/equipment/update-equipments-position`: Para cada equiamento cadastrado, ele verifica a sua localização atual e depois atualiza a sala atual e o histórico do equipamento.
 
     :: !question
-    >Não lembro se ainda é utilizado esse endpoint
-    >
-    ><span class="highlight-orange">PUT</span> `/equipment/update-maintenance`: Atualiza informações de um equipamento.
+    Não lembro se ainda é utilizado esse endpoint
+    
+    <span class="highlight-orange">PUT</span> `/equipment/update-maintenance`: Atualiza informações de um equipamento.
+    - Corpo da requisição: 
+    ```json
+    {
+        "register": "string",
+        "maintenance": false
+    }
+    ```
     ::
 
     <span class="highlight-orange">PUT</span> `/equipment/update-image`: Atualiza informações de um equipamento.
+    - Corpo da requisição: 
+    ```json
+    {
+        "register": "string",
+        "image": "string"
+    }
+    ```
 
     <span class="highlight-red">DELETE</span> `/equipment/delete?register_={register_}`: Remove um equipamento do sistema.
 
@@ -150,6 +220,20 @@ A seguir, estão listados os principais endpoints da API, divididos por suas res
     <span class="highlight-blue">GET</span> `/router/training-data/get-all-macs-in-training`: Retorna todos os macs encontrados nos dados de treinamento.
 
     <span class="highlight-green">POST</span> `/router/training-data/create`: Insere novos dados de treinamento para o modelo.
+    - Corpo da requisição: 
+    ```json
+    {
+        "room": "string",
+        "networks": [
+            {
+            "mac": "string",
+            "name_router": "string",
+            "rssi": 0,
+            "esp_id": "string"
+            }
+        ]
+    }
+    ```
 
 #### /router/data
 
@@ -160,6 +244,32 @@ A seguir, estão listados os principais endpoints da API, divididos por suas res
     <span class="highlight-blue">GET</span> `/router/data/get-last-datafrom-esp-id?esp_id={esp_id}`: Retorna o ultimo dados cadastrado pelo esp.
     
     <span class="highlight-green">POST</span> `/router/data/create`: Insere dados capturados por um esp.
+    - Corpo da requisição: 
+    ```json
+    {
+        "esp_id": "string",
+        "networks": [
+            {
+            "mac": "string",
+            "name_router": "string",
+            "rssi": 0
+            }
+        ]
+    }
+    ```
+    - Corpo da requisição: 
+    ```json
+    {
+        "esp_id": "string",
+        "networks": [
+            {
+            "mac": "string",
+            "name_router": "string",
+            "rssi": 0
+            }
+        ]
+    }
+    ```
 
 #### /settings
 
@@ -170,5 +280,68 @@ A seguir, estão listados os principais endpoints da API, divididos por suas res
     <span class="highlight-blue">GET</span> `/settings/get-mac-list`: Retorna a lista de MACs que serão reconhecidos para o treinamento do modelo.
 
     <span class="highlight-green">POST</span> `/settings/create-mac-list`: Inseri a lista de MACs.
+    - Corpo da requisição: 
+    ```json
+    {
+        "hospital_name": "string",
+        "macs": {
+            "00:00:00:00:00:00" : "string",
+            "00:00:00:00:00:00" : "string"
+        }
+    }
+    ```
 
     <span class="highlight-orange">PUT</span> `/settings/update-mac-list`: Atualiza a lista de MACs.
+    - Corpo da requisição: 
+    ```json
+    {
+        "hospital_name": "string",
+        "macs": {
+            "00:00:00:00:00:00" : "string",
+            "00:00:00:00:00:00" : "string"
+        }
+    }
+    ```
+
+## Testes
+
+Para garantir a robustez e confiabilidade da API Principal, foram desenvolvidos testes **unitários** e **de integração**, utilizando o framework **pytest**.
+
+### Ferramentas utilizadas
+
+**pytest**: Framework de testes utilizado para criar e executar os testes.
+
+**TestClient** (da FastAPI): Cliente usado para simular chamadas HTTP às rotas da API, permitindo testar a aplicação de forma simples e eficiente.
+
+**MongoClient** (da PyMongo): Cliente utilizado para gerenciar a conexão com o MongoDB durante os testes.
+
+**pytest-cov**: Plugin para pytest utilizado para gerar relatórios de cobertura de testes.
+
+### Estrutura dos testes
+
+#### 1. Testes Unitários:
+
+Os testes unitários têm o foco em testar cada componente da API de maneira isolada, sem a dependência de serviços externos, como o banco de dados.
+
+#### 2. Testes de Integração:
+
+Os testes de integração têm como objetivo validar o comportamento da API em cenários que envolvem a interação com o banco de dados MongoDB. Nesses testes, utilizamos o **MongoClient** para manipular e verificar os dados reais no banco e também usamos o **TestClient** do FastAPI para simular as requisições HTTP e validar o comportamento esperado.
+
+#### 3.	Configuração e Mock de Banco de Dados:
+
+Durante os testes de integração, para evitar manipular os dados em um banco de dados real, usamos o **pytest fixtures** para criar um ambiente isolado. Utilizamos o MongoClient para conectar ao banco de dados durante os testes, garantindo que os dados sejam limpos após cada teste para manter a consistência.
+
+### Cobertura de Testes
+
+A cobertura dos testes é gerada utilizando o **pytest-cov**, o que nos permite monitorar o quanto do código está sendo testado. 
+
+
+### Execução dos Testes
+
+Dentro do diretório `api`, podemos executar os testes com o comando:
+
+```
+pytest --cov=src test/
+```
+
+Esse comando rodará todos os testes e gerará um relatório de cobertura, permitindo verificar quais partes do código estão sendo testadas e identificar possíveis áreas não cobertas.
