@@ -2,7 +2,7 @@
   "label": "Backend",
   "position": 3,
   "link": {
-    "type": "generated-index",
-    "description": "API - Documentation to understand the API"
+    "type": "doc",
+    "id": "backend/index"
   }
 }

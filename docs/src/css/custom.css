@@ -20,3 +20,39 @@
   --ifm-color-primary-lightest: #6A77CB;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+h4 {
+  font-size: 1.2rem; /* Ajuste o tamanho conforme sua necessidade */
+}
+
+.highlight-blue {
+  background-color: #61AFFE;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.highlight-green {
+  background-color: #48CD90;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.highlight-red {
+  background-color: #FA3E3E;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.highlight-orange {
+  background-color: #FCA131;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
