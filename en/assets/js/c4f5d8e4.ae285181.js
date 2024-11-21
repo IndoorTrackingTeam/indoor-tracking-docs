@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_it=self.webpackChunkdocs_it||[]).push([[634],{192:(s,t,c)=>{c.r(t),c.d(t,{default:()=>d});c(6540);var o=c(6347),r=c(4848);function d(){return(0,r.jsx)(o.rd,{to:"/indoor-tracking-docs/docs/intro"})}}}]);
