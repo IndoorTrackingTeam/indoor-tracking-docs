@@ -1,41 +1,15 @@
-# Website
+## Indoor Tracking Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Bem-vindo à documentação do Indoor Tracking! Este repositório contém as informações detalhadas sobre o projeto de rastreamento interno, que utiliza tecnologias como ESP32, APIs, Machine Learning, e banco de dados MongoDB para monitorar e atualizar a localização de equipamentos em tempo real.
 
-### Installation
+### Visão Geral
 
-```
-$ yarn
-```
+O projeto Indoor Tracking tem como objetivo fornecer uma solução para monitoramento em tempo real de equipamentos em ambientes internos, utilizando sensores de baixo custo e a integração com uma API central. A documentação aqui presente abrange tanto a parte de configuração do sistema quanto as tecnologias utilizadas no backend e frontend.
 
-### Local Development
 
-```
-$ yarn start
-```
+### Como Usar
+A documentação foi projetada para ser de fácil navegação, com o objetivo de guiar você desde a instalação do sistema até o treinamento do modelo de Machine Learning.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Navegue até a seção Introdução para uma visão geral do sistema.
+Consulte as páginas de Arquitetura, Backend, Frontend e ESP32 para configurar o sistema em seu ambiente.
+Use os links na barra de navegação para acessar as diferentes seções do projeto.
