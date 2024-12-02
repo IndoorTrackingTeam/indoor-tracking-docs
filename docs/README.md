@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="assets/logo.png" alt="Logo" width="200" height="200">
+</p>
+
+<p align="center">
+  <img alt="Static Badge" src="https://img.shields.io/badge/IT-Indoor%20Tracking-F1B600?&logoColor=white">
+</p>
+
 ## Indoor Tracking Documentation
 
 Bem-vindo à documentação do Indoor Tracking! Este repositório contém as informações detalhadas sobre o projeto de rastreamento interno, que utiliza tecnologias como ESP32, APIs, Machine Learning, e banco de dados MongoDB para monitorar e atualizar a localização de equipamentos em tempo real.
