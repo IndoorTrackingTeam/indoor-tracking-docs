@@ -1,9 +1,16 @@
-name: Deploy Docusaurus to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
+    inputs:
+      manual_deploy:
+        description: "Manual Deploy"
+        required: true
+        type: boolean
+        default: true
   push:
     branches:
-      - developemnt
+      - main
 
 jobs:
   deploy:
