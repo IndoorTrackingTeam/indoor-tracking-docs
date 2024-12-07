@@ -6,9 +6,9 @@ toc_max_heading_level: 4
 
 # API Principal
 
-:::info
-Foi utilizado a IDE VSCode (OBS: Pode usar qualquer IDE).
-:::
+A API Principal foi desenvolvida para fornecer uma interface de comunicação eficiente entre o frontend e o backend, permitindo o gerenciamento de dados relacionados aos usuários, equipamentos e roteadores envolvidos no sistema de rastreamento indoor. Esta API também lida com o processamento de dados para o treinamento de modelos de Machine Learning, além de realizar a inferência de localizações dos dispositivos monitorados.
+
+Desenvolvida com o framework **FastAPI**, uma das principais prioridades dessa API é a alta performance e simplicidade, facilitando a integração com o frontend e outros serviços. Toda a estrutura está otimizada para ser hospedada no **Google Cloud Platform (GCP)**, utilizando o **MongoDB Atlas** como nosso banco de dados.
 
 ## Instruções para Executar a API
 
@@ -76,10 +76,6 @@ Após a execução, você pode acessar a documentação interativa da API fornec
 Essa interface permite que você visualize e teste todos os endpoints expostos pela API.
 
 ## Rotas
-
-A API Principal foi desenvolvida para fornecer uma interface de comunicação eficiente entre o frontend e o backend, permitindo o gerenciamento de dados relacionados aos usuários, equipamentos e roteadores envolvidos no sistema de rastreamento indoor. Esta API também lida com o processamento de dados para o treinamento de modelos de Machine Learning, além de realizar a inferência de localizações dos dispositivos monitorados.
-
-Desenvolvida com **FastAPI**, uma das principais prioridades dessa API é a alta performance e simplicidade, facilitando a integração com o frontend e outros serviços. Toda a estrutura está otimizada para ser hospedada no **Google Cloud Platform (GCP)**, utilizando o **MongoDB Atlas** como nosso banco de dados.
 
 A seguir, estão listados os principais endpoints da API, divididos por suas responsabilidades.
 
